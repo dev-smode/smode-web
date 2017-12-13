@@ -1,0 +1,165 @@
+{
+    "LOGOUT": "צא",
+    "SAVE": "שמור",
+    "ERRORS": {
+        "403": {
+            "TITLE": "שים לב!",
+            "BODY_TEXT": "אינך מורשה לבצע את הפעולה הזו."
+        },
+        "404": {
+            "TITLE": "שים לב!",
+            "BODY_TEXT": "המשאב הרצוי לא נמצא (404)"
+        },
+        "502": {
+            "TITLE": "שים לב!",
+            "BODY_TEXT": "עושה רושם שמשהו השתבש. אם התקלה ממשיכה אנא צור קשר עם התמיכה הטכנית."
+        }
+    },
+
+    "LOGIN": {
+        "CONNECT_TO_YOUR_ACCOUNT": "התחבר לחשבון שלך",
+        "EMAIL": "אימייל",
+        "PASSWORD": "סיסמא",
+        "AGREE_TERMS": "בכניסה לאתר אתה מאשר את ",
+        "TERMS_OF_USE": "תנאי השימוש",
+        "PRIVACY_POLICY": "ומדיניות הפרטיות",
+        "SUBMIT": "התחבר"
+    },
+
+    "SIDEBAR": {
+        "ADMIN": {
+            "CUSTOMERS_LIST": "רשימת לקוחות",
+            "ADD_NEW_CUSTOMER": "הוספת לקוח חדש"
+        },
+        "MANAGER": {
+            "DRIVERS_LIST": "רשימת נהגים",
+            "ADD_DRIVER": "הוספת נהג חדש",
+            "SENSORS_LIST": "רשימת סנסורים",
+            "SENSOR_ATTACH": "צימוד סנסור",
+            "PREFERENCE": "העדפות",
+            "SET_PREFERED_NUMBERS": "הגדרת מספרים מועדפים"
+        }
+    },
+    "DASHBOARD": {
+        "TOTOAL_DRIVERS": "מספר הנהגים בצי",
+        "TOTOAL_LAST_ACTIVITY": "סה\"כ שעות נהיגה ב-24 השעות האחרונות",
+        "TOTAL_ACTIVATED_SENSORS": "מספר הסנסורים הפעילים"
+    },
+
+    "CUSTOMER_LIST": {
+        "TITLE": "רשימת לקוחות",
+        "CUSTOMER_NAME": "שם הלקוח",
+        "REGISTERED_DRIVERS": "משתמשים רשומים",
+        "ACTIVATED_DRIVERS": "משתמשים פעילים",
+        "TOTAL_SENSORS": "מספר סנסורים",
+        "ACTIVATED_SENSORS": "סנסורים פעילים",
+        "STATUS": "סטטוס",
+        "ACTIVE": "פעיל",
+        "NOT_ACTIVE": "לא פעיל"
+    },
+    "CUSTOMER_FORM": {
+        "EDIT_CUSTOMER": "ערוך לקוח",
+        "ADD_CUSTOMER": "הוסף לקוח חדש",
+        "LOGO": "לוגו",
+        "COMPANY_NAME": "שם החברה",
+        "CONTACT": "איש קשר",
+        "EMAIL": "אימייל",
+        "PHONE_NUMBER": "מספר טלפון",
+        "ROLE": "תפקיד",
+        "PASSWORD": "סיסמא",
+        "CONFIRM_PASSWORD": "אישור סיסמא",
+        "STATUS": "סטטוס",
+        "ACTIVATE_CUSTOMER": "הפעל לקוח",
+        "DEACTIVATE_CUSTOMER": "הקפא לקוח",
+        "SAVE": "שמור",
+        "CHANGE_PASSWORD": "שנה סיסמא",
+        "ERRORS": {
+            "TITLE": "שגיאה",
+            "BODY_TEXT": "קיים כבר לקוח עם הכתובת אימייל הזו."
+        }
+    },
+    "PAGINATION": {
+        "FIRST": "ראשון",
+        "LAST": "אחרון"
+    },
+    "DRIVER_LIST": {
+        "EDIT_CUSTOMER": "ערוך לקוח",
+        "TITLE": "רשימת נהגים",
+        "SENSORS_LIST": "רשימת סנסורים",
+        "SEARCH_LABEL": "חיפוש:",
+        "SEARCH_BUTTON": "חפש",
+        "DRIVER_NAME": "שם הנהג",
+        "PHONE_NUMBER": "מספר טלפון",
+        "ACTIVITY_HOURS": "שעות פעילות",
+        "DRIVE_STATUS": "מצב נהיגה",
+        "ACTIVE": "פעיל",
+        "NOT_ACTIVE": "לא פעיל",
+        "DRIVING": "נוסע",
+        "STOPPED": "מנוחה",
+        "HOURS": "שעות",
+        "NO_RESULT": "לא נמצאו תוצאות"
+    },
+    "DRIVER_FORM": {
+        "EDIT_DRIVER": "ערוך נהג",
+        "ADD_DRIVER": "הוסף נהג חדש",
+        "FOR_YOUR_INFORMATION": "לידיעתך",
+        "MAY_PAY_MORE": "בהתאם להסכם החברה ייתכן ותחויב בתשלום נוסף בעבור הוספת נהג חדש",
+        "DRIVER_ID": "תעודת זהות",
+        "LICENSE_NUMBER": "מספר רשיון נהיגה",
+        "PERMISSION_LEVEL": "רמת הרשאות",
+        "STATUS": "סטטוס",
+        "SAVE": "שמור",
+        "ENTER_ACTIVITY_LOGS": "כניסה ללוג הפעלות",
+        "ACTIVATE_DRIVER": "הפעל נהג",
+        "DEACTIVATE_DRIVER": "הקפא נהג",
+        "DRIVER_PERMISSIONS": {
+            "LEVEL_A": "רמה א",
+            "LEVEL_B": "רמה ב",
+            "LEVEL_C": "רמה ג",
+            "LEVEL_D": "רמה ד"
+        }
+    },
+    "SENSOR_LIST": {
+        "SERIAL": "מספר סידורי",
+        "LICENSE_PLATE_NUMBER": "מספר רכב",
+        "LAST_ACTIVITY": "תאריך הפעלה אחרון",
+        "EXPIRY_DATE": "תוקף סנסור",
+        "ACTION": "פעולה",
+        "ACTIVATE_SENSOR": "הפעלת סנסור",
+        "DEACTIVATE_SENSOR": "הקפאת סנסור",
+        "NOT_ACTIVATED": "טרם הופעל",
+        "NO_RESULT": "לא נמצאו תוצאות",
+        "SAVE": "שמור",
+        "ATTACH": "צימוד סנסור",
+        "ERRORS": {
+            "TITLE": "שים לב!",
+            "BODY_TEXT": "צימוד כזה כבר קיים במערכת."
+        }
+    },
+    "ACTIVITY_LOG": {
+        "TOTAL_ACTIVITY_HOURS": "סה\"כ שעות פעילות",
+        "LOG": "לוג",
+        "DATE": "תאריך",
+        "START_DATE": "זמן התחלת פעילות",
+        "END_DATE": "זמן סיום פעילות",
+        "TOTAL_TIME": "משך פעילות",
+        "ACTIVITY_END_TYPE": "אופן כיבוי פעילות",
+        "NO_RESULT": "לא נמצאו תוצאות",
+        "IS_PASSENGER": "נוסע?"
+    },
+    "PHONE_NUMBERS": {
+        "DEFINE_PREFERRED_NUMBERS": "הגדרת מספרים מועדפים",
+        "FULL_NAME": "שם מלא",
+        "PHONE_NUMBER": "מספר טלפון",
+        "ERRORS": {
+            "ATTENTION": "שים לב!",
+            "NO_MORE_PHONE_NUMBERS": "אין אפשרות להוסיף יותר מ-12 מספרים"
+        }
+    },
+    "preferences": {
+        "TITLE": "כללי",
+        "ALLOW_PASSANGER_MODE": "אפשר מצב נוסע",
+        "ALLOW_START_STOP": "אפשר stop & start",
+        "ALLOW_MANUAL_END_ACTIVITY": "אפשר כיבוי ידני"
+    }
+}

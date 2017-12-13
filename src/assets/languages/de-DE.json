@@ -1,0 +1,147 @@
+{
+  "LOGOUT": "Beenden",
+  "SAVE": "Speichern",
+  "ERRORS": {
+    "403": {
+      "TITLE": "Hinweis!",
+      "BODY_TEXT": "Sie sind zum Ausführen dieser Aktion nicht berechtigt."
+    },
+    "404": {
+      "TITLE": "Hinweis!",
+      "BODY_TEXT": "Die angeforderte Ressource wurde nicht gefunden (404)"
+    },
+    "502": {
+      "TITLE": "Hinweis!",
+      "BODY_TEXT": "Es scheint etwas schief gelaufen zu sein. Bitte wenden Sie sich an den technischen Support, wenn das Problem weiterhin besteht."
+    }
+  },
+  "LOGIN": {
+    "CONNECT_TO_YOUR_ACCOUNT": "Melden Sie sich bei Ihrem Konto an",
+    "EMAIL": "E-Mail",
+    "PASSWORD": "Passwort",
+    "AGREE_TERMS": "Durch das Betreten der Internetseite bestätigen Sie die",
+    "TERMS_OF_USE": "Nutzungsbedingungen",
+    "PRIVACY_POLICY": "und Datenschutzbestimmungen",
+    "SUBMIT": "Anmelden"
+  },
+  "SIDEBAR": {
+    "ADMIN": {
+      "CUSTOMERS_LIST": "Kundenliste",
+      "ADD_NEW_CUSTOMER": "Einen neuen Kunden hinzufügen"
+    },
+    "MANAGER": {
+      "DRIVERS_LIST": "Fahrerliste",
+      "ADD_DRIVER": "Einen neuen Fahrer hinzufügen",
+      "SENSORS_LIST": "Sensorliste",
+      "SENSOR_ATTACH": "Sensorkopplung",
+      "PREFERENCE": "Einstellungen",
+      "SET_PREFERED_NUMBERS": "Bevorzugte Nummern einstellen"
+    }
+  },
+  "DASHBOARD": {
+    "TOTOAL_DRIVERS": "Anzahl der Fahrer in der Flotte",
+    "TOTOAL_LAST_ACTIVITY": "Fahrstunden in den letzten 24 Stunden insgesamt",
+    "TOTAL_ACTIVATED_SENSORS": "Anzahl aktiver Sensoren"
+  },
+  "CUSTOMER_LIST": {
+    "TITLE": "Kundenliste",
+    "CUSTOMER_NAME": "Kundenname",
+    "REGISTERED_DRIVERS": "Registrierte Benutzer",
+    "ACTIVATED_DRIVERS": "Aktive Benutzer",
+    "TOTAL_SENSORS": "Anzahl an Sensoren",
+    "ACTIVATED_SENSORS": "Aktive Sensoren",
+    "STATUS": "Status",
+    "ACTIVE": "Aktiv",
+    "NOT_ACTIVE": "Inaktiv"
+  },
+  "CUSTOMER_FORM": {
+    "EDIT_CUSTOMER": "Kunde bearbeiten",
+    "ADD_CUSTOMER": "Einen neuen Kunden hinzufügen",
+    "LOGO": "Logo",
+    "COMPANY_NAME": "Firmenname",
+    "CONTACT": "Ansprechpartner",
+    "EMAIL": "E-Mail",
+    "PHONE_NUMBER": "Telefonnummer",
+    "ROLE": "Rolle",
+    "PASSWORD": "Passwort",
+    "CONFIRM_PASSWORD": "Passwortbestätigung",
+    "STATUS": "Status",
+    "ACTIVATE_CUSTOMER": "Kunde aktivieren",
+    "DEACTIVATE_CUSTOMER": "Kunde sperren",
+    "SAVE": "Speichern",
+    "CHANGE_PASSWORD": "Passwort ändern",
+    "ERRORS": {
+      "TITLE": "Fehler",
+      "BODY_TEXT": "Ein Kunde mit dieser E-Mail-Adresse ist bereits vorhanden."
+    }
+  },
+  "PAGINATION": {
+    "FIRST": "Erster",
+    "LAST": "Letzter"
+  },
+  "DRIVER_LIST": {
+    "EDIT_CUSTOMER": "Kunde bearbeiten",
+    "TITLE": "Fahrerliste",
+    "SENSORS_LIST": "Sensorliste",
+    "SEARCH_LABEL": "Suche:",
+    "SEARCH_BUTTON": "Suche",
+    "DRIVER_NAME": "Fahrername",
+    "PHONE_NUMBER": "Telefonnummer",
+    "ACTIVITY_HOURS": "Betriebsstunden",
+    "DRIVE_STATUS": "Fahrmodus",
+    "ACTIVE": "Aktiv",
+    "NOT_ACTIVE": "Inaktiv",
+    "HOURS": "Stunden",
+    "NO_RESULT": "Keine Ergebnisse gefunden"
+  },
+  "DRIVER_FORM": {
+    "EDIT_DRIVER": "Fahrer bearbeiten",
+    "ADD_DRIVER": "Einen neuen Fahrer hinzufügen",
+    "FOR_YOUR_INFORMATION": "Bitte beachten Sie",
+    "MAY_PAY_MORE": "Gemäß der Unternehmensvereinbarung wird Ihnen ggf. eine zusätzliche Gebühr für das Hinzufügen eines neuen Fahrers berechnet",
+    "DRIVER_ID": "ID-Nummer",
+    "LICENSE_NUMBER": "Führerscheinnummer",
+    "PERMISSION_LEVEL": "Berechtigungsstufe",
+    "STATUS": "Status",
+    "SAVE": "Speichern",
+    "ENTER_ACTIVITY_LOGS": "Aktivierungsprotokoll wird aufgerufen",
+    "ACTIVATE_DRIVER": "Fahrer aktivieren",
+    "DEACTIVATE_DRIVER": "Fahrer sperren"
+  },
+  "SENSOR_LIST": {
+    "SERIAL": "Seriennummer",
+    "LICENSE_PLATE_NUMBER": "Autokennzeichen",
+    "LAST_ACTIVITY": "Datum der letzten Aktivierung",
+    "EXPIRY_DATE": "Sensorgültigkeit",
+    "ACTION": "Betrieb",
+    "ACTIVATE_SENSOR": "Sensoraktivierung",
+    "DEACTIVATE_SENSOR": "Sensorsperre",
+    "NOT_ACTIVATED": "Noch nicht aktiviert",
+    "NO_RESULT": "Keine Ergebnisse gefunden",
+    "SAVE": "Speichern",
+    "ATTACH": "Sensorkopplung",
+    "ERRORS": {
+      "TITLE": "Hinweis!",
+      "BODY_TEXT": "Diese Kopplung ist im System bereits vorhanden."
+    }
+  },
+  "ACTIVITY_LOG": {
+    "TOTAL_ACTIVITY_HOURS": "Betriebsstunden insgesamt",
+    "LOG": "Protokoll",
+    "DATE": "Datum",
+    "START_DATE": "Betrieb Startzeit",
+    "END_DATE": "Betrieb Endzeit",
+    "TOTAL_TIME": "Betrieb Dauer",
+    "ACTIVITY_END_TYPE": "Betrieb Abschaltungsmethode",
+    "NO_RESULT": "Keine Ergebnisse gefunden"
+  },
+  "PHONE_NUMBERS": {
+    "DEFINE_PREFERRED_NUMBERS": "Bevorzugte Nummern einstellen",
+    "FULL_NAME": "Vollständiger Name",
+    "PHONE_NUMBER": "Telefonnummer",
+    "ERRORS": {
+      "ATTENTION": "Hinweis!",
+      "NO_MORE_PHONE_NUMBERS": "Es können nicht mehr als 12 Nummern hinzugefügt werden"
+    }
+  }
+}

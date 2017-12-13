@@ -1,0 +1,84 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-xs-12">
+                <button class="btn btn-success pull-right" ng-click="vm.goToEditCustomer()" ng-if="vm.id" data-translate="DRIVER_LIST.EDIT_CUSTOMER">ערוך לקוח</button>
+            </div>
+        </div>
+        <div class="row" ng-if="isAdmin">
+            <div class="col-xs-4">
+                <img class="img img-responsive" ng-src="{{vm.customer.companyLogo.url}}" ng-if="vm.customer.companyLogo.url" style="max-height: 150px" alt="logo">
+            </div>
+            <div class="col-xs-8">
+                <h1>{{vm.customer.displayName}}</h1>
+                <h3>{{vm.customer.companyRole}}</h3>
+                <h3>{{vm.customer.phoneNumber}}</h3>
+            </div>
+        </div>
+        <div class="portlet light bordered">
+            <div class="portlet-title">
+                <div class="caption font-dark pull-left">
+                    <span class="caption-subject bold uppercase" data-translate="DRIVER_LIST.TITLE"> רשימת נהגים </span>
+                    <span ng-if="isAdmin" class="caption-subject bold uppercase"> | </span>
+                    <span ng-if="isAdmin" class="caption-subject bold uppercase"><a ui-sref="beaconsList({id: vm.id})" data-translate="DRIVER_LIST.SENSORS_LIST"> רשימת סנסורים </a></span>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <form ng-submit="vm.search()">
+                    <label for="search" data-translate="DRIVER_LIST.SEARCH_LABEL">חיפוש: </label>
+                    <input id="search" type="text" ng-model="vm.searchQuery">
+                    <button type="submit" class="btn btn-info" data-translate="DRIVER_LIST.SEARCH_BUTTON">חפש</button>
+                </form>
+            </div>
+            <div class="portlet-body">
+                <div ng-show="vm.drivers.content.length === 0" data-translate="DRIVER_LIST.NO_RESULT">
+                    לא נמצאו תוצאות
+                </div>
+                <table class="table table-striped table-bordered table-hover table-checkable order-column" ng-hide="vm.drivers.content.length === 0" id="sample_1">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th data-translate="DRIVER_LIST.DRIVER_NAME">שם הנהג</th>
+                            <th data-translate="DRIVER_LIST.PHONE_NUMBER">מספר טלפון</th>
+                            <th data-translate="DRIVER_LIST.ACTIVITY_HOURS">שעות פעילות</th>
+                            <th data-translate="DRIVER_LIST.DRIVE_STATUS">מצב נהיגה</th>
+                        </tr>
+                    </thead>
+                    <tbody ng-show="vm.drivers.content.length > 0">
+                        <tr class="odd gradeX" ng-repeat="item in vm.drivers.content track by $index" ng-click="vm.goTo($index)" ng-class="{'pointer': !isAdmin}">
+                            <td>
+                                {{ $index + 1 + 20 * vm.currentPage }}
+                            </td>
+                            <td> {{ item.displayName }} </td>
+                            <td> {{ item.phoneNumber }} </td>
+                            <td> {{ item.activeHours }} {{ 'DRIVER_LIST.HOURS' | translate }}</td>
+                            <td data-ng-if="item.status == 'DRIVING' || item.status == 'STOPPED'">
+                                {{'DRIVER_LIST.ACTIVE' | translate }} ({{ item.status == 'DRIVING' ? 'DRIVER_LIST.DRIVING' : 'DRIVER_LIST.STOPPED' | translate }})
+                            </td>
+                            <td data-ng-if="item.status == 'IDLE'"> {{ 'DRIVER_LIST.NOT_ACTIVE' | translate }} </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+                <ul class="pagination" ng-hide="vm.totalPages().length === 0">
+                    <li ng-hide="vm.drivers.totalPages === 1">
+                        <a href="" ng-click="vm.goToPage(0)" data-translate="PAGINATION.FIRST">ראשון</a>
+                    </li>
+                    <li ng-hide="vm.currentPage == 0">
+                        <a href="" ng-click="vm.goToPage(vm.currentPage - 1)">‹</a>
+                    </li>
+                    <li ng-class="{active: vm.drivers.number === $index}" ng-repeat="page in vm.totalPages() track by $index">
+                        <a href="" ng-click="vm.goToPage($index)">{{ $index + 1 }}</a>
+                    </li>
+                    <li ng-hide="vm.drivers.last">
+                        <a href="" ng-click="vm.goToPage(vm.currentPage + 1)">›</a>
+                    </li>
+                    <li ng-hide="vm.drivers.last">
+                        <a ng-click="vm.goToPage(vm.totalPages().length - 1)" data-translate="PAGINATION.LAST">אחרון</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

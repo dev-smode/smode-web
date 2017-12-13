@@ -1,0 +1,38 @@
+<div ng-controller="DashboardController">
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <div class="dashboard-stat blue">
+                <div class="visual">
+                    <i class="fa fa-users"></i>
+                </div>
+                <div class="details">
+                    <div class="number"> {{ vm.stats.totalDrivers }} </div>
+                    <div class="desc" data-translate="DASHBOARD.TOTOAL_DRIVERS"> מספר הנהגים בצי </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <div class="dashboard-stat green">
+                <div class="visual">
+                    <i class="fa fa-clock-o"></i>
+                </div>
+                <div class="details">
+                    <div class="number"> {{ vm.stats.yesterdayActivitySeconds }} </div>
+                    <div class="desc" data-translate="DASHBOARD.TOTOAL_LAST_ACTIVITY"> סה"כ שעות נהיגה ב-24 השעות האחרונות </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <div class="dashboard-stat purple">
+                <div class="visual">
+                    <i class="icon-target"></i>
+                </div>
+                <div class="details">
+                    <div class="number"> {{ vm.stats.totalActivatedBeacons }} </div>
+                    <div class="desc" data-translate="DASHBOARD.TOTAL_ACTIVATED_SENSORS"> מספר הסנסורים הפעילים </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ui-view></div>
+</div>

@@ -1,0 +1,61 @@
+<div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#page-sidebar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+<div class="page-sidebar navbar-collapse collapse" id="page-sidebar">
+    <ul class="page-sidebar-menu" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200" ng-class="{'page-sidebar-menu-closed': settings.layout.pageSidebarClosed}">
+        <li class="nav-item" ng-show="isAdmin">
+            <a ui-sref="customerList">
+                <i class="icon-home"></i>
+                <span class="title" data-translate="SIDEBAR.ADMIN.CUSTOMERS_LIST">רשימת לקוחות</span>
+            </a>
+        </li>
+        <li class="nav-item" ng-show="isAdmin">
+            <a ui-sref="addNewCustomer" id="sidebar_menu_link_profile">
+                <i class="icon-plus"></i>
+                <span class="title" data-translate="SIDEBAR.ADMIN.ADD_NEW_CUSTOMER">הוספת לקוח חדש</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a ui-sref="driversList" ng-hide="isAdmin">
+                <i class="icon-users"></i>
+                <span class="title" data-translate="SIDEBAR.MANAGER.DRIVERS_LIST">רשימת נהגים</span>
+            </a>
+        </li>
+        <li class="nav-item" ng-hide="isAdmin">
+            <a ui-sref="addNewDriver" id="sidebar_menu_link_profile">
+                <i class="icon-plus"></i>
+                <span class="title" data-translate="SIDEBAR.MANAGER.ADD_DRIVER">הוספת נהג חדש</span>
+            </a>
+        </li>
+        <li class="nav-item" ng-hide="isAdmin">
+            <a ui-sref="beaconsList" id="sidebar_menu_link_profile">
+                <i class="icon-target"></i>
+                <span class="title" data-translate="SIDEBAR.MANAGER.SENSORS_LIST">רשימת סנסורים</span>
+            </a>
+        </li>
+        <li class="nav-item" ng-hide="isAdmin">
+            <a ui-sref="attachBeacon" id="sidebar_menu_link_profile">
+                <i class="icon-plus"></i>
+                <span class="title" data-translate="SIDEBAR.MANAGER.SENSOR_ATTACH">צימוד סנסור</span>
+            </a>
+        </li>
+        <li class="nav-item" ng-hide="isAdmin">
+            <a ui-sref="preferences" class="nav-link">
+                <i class="icon-settings"></i>
+                <span class="title" data-translate="SIDEBAR.MANAGER.PREFERENCE">העדפות</span>
+            </a>
+            <!--<ul class="sub-menu">
+                <li ng-if="isCustomer && !isAdmin">
+                    <a ui-sref="addDriversPhoneNumbers">
+                        <i class="icon-screen-smartphone"></i>{{ 'SIDEBAR.MANAGER.SET_PREFERED_NUMBERS' | translate }}</span>
+                    </a>
+                </li>
+            </ul>-->
+        </li>
+    </ul>
+</div>

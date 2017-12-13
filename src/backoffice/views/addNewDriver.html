@@ -1,0 +1,68 @@
+<div class="portlet light bordered">
+    <div class="portlet-title">
+        <div class="caption pull-left">
+            <span class="caption-subject font-dark sbold uppercase" data-ng-show="vm.editMode" data-translate="DRIVER_FORM.EDIT_DRIVER"></span>
+            <span class="caption-subject font-dark sbold uppercase" data-ng-hide="vm.editMode" data-translate="DRIVER_FORM.ADD_DRIVER"></span>
+        </div>
+    </div>
+    <div class="portlet-body form">
+        <div class="alert alert-danger col-xs-12" role="alert" ng-hide="vm.editMode">
+            <strong>{{ 'DRIVER_FORM.FOR_YOUR_INFORMATION' | translate }},</strong> <span data-translate="DRIVER_FORM.MAY_PAY_MORE"></span>.
+        </div>
+        <div ng-if="vm.editMode && vm.driver.licenceImage">
+            <img class="img img-responsive" ng-src="{{vm.driver.licenceImage}}">
+        </div>
+        <form class="form-horizontal" novalidate name="newDriver" ng-submit="vm.addNewDriver()">
+            <div class="form-body">
+                <div class="form-group">
+                    <label class="col-md-3 control-label" data-translate="DRIVER_LIST.DRIVER_NAME">שם הנהג</label>
+                    <div class="col-md-9">
+                        <input type="text" name="displayName" ng-class="{highlight: newDriver.displayName.$error.required && newDriver.displayName.$touched}" class="form-control" placeholder="שם הנהג" data-translate data-translate-attr-placeholder="DRIVER_LIST.DRIVER_NAME" ng-model="vm.driver.displayName" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label" data-translate="DRIVER_LIST.PHONE_NUMBER">מספר טלפון</label>
+                    <div class="col-md-9">
+                        <input name="phoneNumber" ng-class="{highlight: (newDriver.phoneNumber.$error.required || newDriver.phoneNumber.$error.pattern) && newDriver.phoneNumber.$touched}" type="text" class="form-control" placeholder="מספר טלפון" data-translate data-translate-attr-placeholder="DRIVER_LIST.PHONE_NUMBER" ng-model="vm.driver.phoneNumber"
+                            ng-pattern="/^([0|\+[0-9]{1,5})?([0-9]{10})$/" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label" data-translate="DRIVER_FORM.DRIVER_ID">תעודת זהות</label>
+                    <div class="col-md-9">
+                        <input name="idNumber" ng-class="{highlight: (newDriver.idNumber.$error.required || newDriver.idNumber.$error.pattern)  && newDriver.idNumber.$touched}" ng-pattern="/^\d{9,9}$/" type="text" class="form-control" placeholder="תעודת זהות" data-translate data-translate-attr-placeholder="DRIVER_FORM.DRIVER_ID" ng-model="vm.driver.idNumber"
+                            required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label" data-translate="DRIVER_FORM.LICENSE_NUMBER">מספר רשיון נהיגה</label>
+                    <div class="col-md-9">
+                        <input name="licenseNumber" ng-class="{highlight: newDriver.licenseNumber.$error.required && newDriver.licenseNumber.$touched}" type="text" class="form-control" placeholder="מספר רשיון נהיגה" data-translate data-translate-attr-placeholder="DRIVER_FORM.LICENSE_NUMBER" ng-model="vm.driver.licenseNumber" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label" data-translate="DRIVER_FORM.PERMISSION_LEVEL">רמת הרשאות</label>
+                    <div class="col-md-9">
+                        <select name="permissionLevel" required ng-class="{highlight: newDriver.permissionLevel.$error.required && newDriver.permissionLevel.$touched}" ng-model="vm.driver.permissionLevel" class="form-control" ng-options="p.value as (p.name | translate) for p in vm.permissions">
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group" ng-if="vm.editMode">
+                    <label class="col-md-3 control-label" data-translate="DRIVER_FORM.STATUS">סטטוס</label>
+                    <div class="col-md-9">
+                        <button class="btn pull-left" ng-class="{'btn-danger': vm.driver.active}" type="button" ng-show="vm.driver.active" ng-click="vm.toggleSuspendDriver()" data-translate="DRIVER_FORM.DEACTIVATE_DRIVER">הקפא נהג</button>
+                        <button class="btn pull-left" ng-class="{'btn-success': !vm.driver.active}" type="button" ng-show="!vm.driver.active" ng-click="vm.toggleSuspendDriver()" data-translate="DRIVER_FORM.ACTIVATE_DRIVER">הפעל נהג</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3 pull-right">
+                        <button class="btn btn-success pull-right" ladda="vm.loading" type="submit" ng-disabled="newDriver.$invalid" data-translate="DRIVER_FORM.SAVE">שמור</button>
+                    </div>
+                    <div class="col-md-3 pull-right" ng-if="vm.editMode">
+                        <button class="btn btn-warning pull-left" ng-click="vm.viewLog()" type="button" data-translate="DRIVER_FORM.ENTER_ACTIVITY_LOGS">כניסה ללוג הפעלות</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

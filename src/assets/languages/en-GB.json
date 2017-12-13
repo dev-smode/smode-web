@@ -1,0 +1,147 @@
+{
+  "LOGOUT": "Exit",
+  "SAVE": "Save",
+  "ERRORS": {
+    "403": {
+      "TITLE": "Please note!",
+      "BODY_TEXT": "You are not authorised to perform this action."
+    },
+    "404": {
+      "TITLE": "Please note!",
+      "BODY_TEXT": "The resource requested  was not found (404)"
+    },
+    "502": {
+      "TITLE": "Please note!",
+      "BODY_TEXT": " Something appears to have gone wrong. If the problem persists, please contact technical support."
+    }
+  },
+  "LOGIN": {
+    "CONNECT_TO_YOUR_ACCOUNT": "Sign in to your Account",
+    "EMAIL": "E-mail address",
+    "PASSWORD": "Password",
+    "AGREE_TERMS": "By entering the site, you are confirming that you agree with  the",
+    "TERMS_OF_USE": "Terms of Use",
+    "PRIVACY_POLICY": "and the Privacy Policy",
+    "SUBMIT": "Sign in"
+  },
+  "SIDEBAR": {
+    "ADMIN": {
+      "CUSTOMERS_LIST": "List of Customers",
+      "ADD_NEW_CUSTOMER": "Adding a New Customer"
+    },
+    "MANAGER": {
+      "DRIVERS_LIST": "List of Drivers",
+      "ADD_DRIVER": "Adding a New Driver",
+      "SENSORS_LIST": "List of Sensors",
+      "SENSOR_ATTACH": "Sensor Coupling",
+      "PREFERENCE": "Preferences",
+      "SET_PREFERED_NUMBERS": "Setting Preferred Numbers"
+    }
+  },
+  "DASHBOARD": {
+    "TOTOAL_DRIVERS": "Number of drivers in the fleet",
+    "TOTOAL_LAST_ACTIVITY": "Total driving hours in the last 24 hours",
+    "TOTAL_ACTIVATED_SENSORS": "Number of active sensors"
+  },
+  "CUSTOMER_LIST": {
+    "TITLE": "List of Customers",
+    "CUSTOMER_NAME": "Customer Name",
+    "REGISTERED_DRIVERS": "Registered Users",
+    "ACTIVATED_DRIVERS": "Active Users",
+    "TOTAL_SENSORS": "Number of Sensors",
+    "ACTIVATED_SENSORS": "Active Sensors",
+    "STATUS": "Status",
+    "ACTIVE": "Active",
+    "NOT_ACTIVE": "Inactive"
+  },
+  "CUSTOMER_FORM": {
+    "EDIT_CUSTOMER": "Edit Customer",
+    "ADD_CUSTOMER": "Add a New Customer",
+    "LOGO": "Logo",
+    "COMPANY_NAME": "Company Name",
+    "CONTACT": "Contact Person",
+    "EMAIL": "E-mail address",
+    "PHONE_NUMBER": "Phone Number",
+    "ROLE": "Role",
+    "PASSWORD": "Password",
+    "CONFIRM_PASSWORD": "Confirm Password ",
+    "STATUS": "Status",
+    "ACTIVATE_CUSTOMER": "Activate Customer",
+    "DEACTIVATE_CUSTOMER": "Suspend Customer",
+    "SAVE": "Save",
+    "CHANGE_PASSWORD": "Change Password",
+    "ERRORS": {
+      "TITLE": "Error",
+      "BODY_TEXT": "A customer  with this e-mail address already exists."
+    }
+  },
+  "PAGINATION": {
+    "FIRST": "First",
+    "LAST": "Last"
+  },
+  "DRIVER_LIST": {
+    "EDIT_CUSTOMER": "Edit Customer",
+    "TITLE": "List of Drivers",
+    "SENSORS_LIST": "List of Sensors",
+    "SEARCH_LABEL": "Search:",
+    "SEARCH_BUTTON": "Search",
+    "DRIVER_NAME": "Driver Name",
+    "PHONE_NUMBER": "Phone Number",
+    "ACTIVITY_HOURS": "Operation Hours",
+    "DRIVE_STATUS": "Driving Mode",
+    "ACTIVE": "Active",
+    "NOT_ACTIVE": "Inactive",
+    "HOURS": "Hours",
+    "NO_RESULT": "No results found"
+  },
+  "DRIVER_FORM": {
+    "EDIT_DRIVER": "Edit Driver",
+    "ADD_DRIVER": "Add a New Driver",
+    "FOR_YOUR_INFORMATION": "Please note",
+    "MAY_PAY_MORE": "In accordance with  the Company Agreement, you may be charged an additional fee if you add  a new driver",
+    "DRIVER_ID": "ID number",
+    "LICENSE_NUMBER": "Driver's License Number",
+    "PERMISSION_LEVEL": "Permissions Level",
+    "STATUS": "Status",
+    "SAVE": "Save",
+    "ENTER_ACTIVITY_LOGS": "Entering Activations Log",
+    "ACTIVATE_DRIVER": "Activate Driver",
+    "DEACTIVATE_DRIVER": "Suspend Driver"
+  },
+  "SENSOR_LIST": {
+    "SERIAL": "Serial Number",
+    "LICENSE_PLATE_NUMBER": "Vehicle number",
+    "LAST_ACTIVITY": "Last Activation Date",
+    "EXPIRY_DATE": "Sensor Validity",
+    "ACTION": "Operation",
+    "ACTIVATE_SENSOR": " Activation of Sensor",
+    "DEACTIVATE_SENSOR": " Suspension of Sensor",
+    "NOT_ACTIVATED": "Not yet activated",
+    "NO_RESULT": "No results found",
+    "SAVE": "Save",
+    "ATTACH": "Sensor Coupling",
+    "ERRORS": {
+      "TITLE": "Please note!",
+      "BODY_TEXT": "This coupling already exists in the system."
+    }
+  },
+  "ACTIVITY_LOG": {
+    "TOTAL_ACTIVITY_HOURS": "Total Operation Hours",
+    "LOG": "Log",
+    "DATE": "Date",
+    "START_DATE": "Operation Start Time",
+    "END_DATE": "Operation End Time",
+    "TOTAL_TIME": "Operation Duration",
+    "ACTIVITY_END_TYPE": "Operation Shutdown Method",
+    "NO_RESULT": "No results found"
+  },
+  "PHONE_NUMBERS": {
+    "DEFINE_PREFERRED_NUMBERS": "Setting Preferred Numbers",
+    "FULL_NAME": "Full name",
+    "PHONE_NUMBER": "Phone Number",
+    "ERRORS": {
+      "ATTENTION": "Please note!",
+      "NO_MORE_PHONE_NUMBERS": "A maximum of 12 numbers may be added"
+    }
+  }
+}

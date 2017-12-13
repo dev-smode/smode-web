@@ -1,0 +1,3 @@
+<app-datatable data="vm.customers" tabletitle="'CUSTOMER_LIST.TITLE' | translate" ng-if="isAdmin" translate-data="{status: true}" tddata="['companyName', 'registeredDrivers', 'activatedDrivers', 'totalBeacons', 'activatedBeacons', 'status']" thtitles="['#',('CUSTOMER_LIST.CUSTOMER_NAME' | translate), ('CUSTOMER_LIST.REGISTERED_DRIVERS' | translate), ('CUSTOMER_LIST.ACTIVATED_DRIVERS' | translate), ('CUSTOMER_LIST.TOTAL_SENSORS' | translate), ('CUSTOMER_LIST.ACTIVATED_SENSORS' | translate), ('CUSTOMER_LIST.STATUS' | translate)]"
+    goto="{state: 'driversList', key: 'id'}">
+</app-datatable>
