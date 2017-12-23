@@ -1,0 +1,13 @@
+<div data-ng-include="'/backoffice/tpl/header.html'" data-ng-controller="HeaderController" class="page-header navbar navbar-fixed-top"> </div>
+<div class="clearfix"> </div>
+<div class="page-container">
+    <div data-ng-include="'/backoffice/tpl/sidebar.html'" data-ng-controller="SidebarController" class="page-sidebar-wrapper"> </div>
+    <div class="page-content-wrapper">
+        <div class="page-content">
+            <div ui-view class="fade-in-up"> </div>
+            <a href="javascript:;" class="page-quick-sidebar-toggler">
+                <i class="icon-login"></i>
+            </a>
+        </div>
+    </div>
+</div>

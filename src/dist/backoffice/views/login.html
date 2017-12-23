@@ -1,0 +1,39 @@
+<div class="app-table full-width full-height">
+    <div class="login app-table-cell">
+        <div class="content">
+            <!-- BEGIN LOGIN FORM -->
+            <form name="loginForm" class="login-form" ng-submit="vm.submit(loginForm.$valid)">
+                <h3 class="form-title" data-translate="LOGIN.CONNECT_TO_YOUR_ACCOUNT">התחבר לחשבון שלך</h3>
+                <div class="alert alert-danger display-hide">
+                    <button class="close" data-close="alert"></button>
+                    <span> הכנס את האימייל והסיסמא שלך. </span>
+                </div>
+                <div class="form-group">
+                    <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+                    <label class="control-label visible-ie8 visible-ie9" data-translate="LOGIN.EMAIL">אימייל</label>
+                    <div class="input-icon" ng-class="{highlight: loginForm.email.$error.required && loginForm.email.$touched}">
+                        <i class="fa fa-user"></i>
+                        <input ng-model="vm.email" class="form-control placeholder-no-fix" type="email" autocomplete="off" placeholder="אימייל" data-translate data-translate-attr-placeholder="LOGIN.EMAIL" name="email" required/> </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label visible-ie8 visible-ie9" data-translate="LOGIN.PASSWORD">סיסמא</label>
+                    <div class="input-icon">
+                        <i class="fa fa-lock"></i>
+                        <input ng-model="vm.password" ng-class="{highlight: loginForm.password.$error.required && loginForm.password.$touched}" class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="סיסמא" data-translate data-translate-attr-placeholder="LOGIN.PASSWORD" name="password" required/>                        </div>
+                </div>
+                <div class="form-group">
+                    <small id="" class="text-muted">
+                        {{ 'LOGIN.AGREE_TERMS' | translate }} <a href="http://www.irehapp.com/terms-conditions" target="blank" data-translate="LOGIN.TERMS_OF_USE">תנאי השימוש</a> <a href="http://www.irehapp.com/copy-of-terms-conditions" target="blank" data-translate="LOGIN.PRIVACY_POLICY">ומדיניות הפרטיות</a>
+                    </small>
+                </div>
+                <!--<div class="form-group">
+                    <div vc-recaptcha key="'6LfFASYUAAAAAGdXngVJybw9uFWbmf2AjOC5V0mI'" data-ng-model="vm.recaptchaResponse"></div>
+                </div>-->
+                <div class="form-actions">
+                    <button type="submit" class="btn green pull-right" ng-disabled="loginForm.$invalid" data-translate="LOGIN.SUBMIT"> התחבר </button>
+                </div>
+            </form>
+            <!-- END LOGIN FORM -->
+        </div>
+    </div>
+</div>

@@ -1,0 +1,68 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-xs-12">
+                <button class="btn btn-success pull-right" ng-click="vm.goToEditCustomer()" ng-if="vm.id" data-translate="DRIVER_LIST.EDIT_CUSTOMER">ערוך לקוח</button>
+            </div>
+        </div>
+        <div class="portlet light bordered">
+            <div class="portlet-title">
+                <div class="caption font-dark pull-left">
+                    <span ng-if="isAdmin" class="caption-subject bold uppercase"><a ui-sref="driversList({id: vm.id})" data-translate="DRIVER_LIST.TITLE"> רשימת נהגים </a></span>
+                    <span ng-if="isAdmin" class="caption-subject bold uppercase"> | </span>
+                    <span class="caption-subject bold uppercase" data-translate="DRIVER_LIST.SENSORS_LIST"> רשימת סנסורים </span>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div ng-show="vm.beacons.content.length === 0" data-translate="SENSOR_LIST.NO_RESULT">
+                    לא נמצאו תוצאות
+                </div>
+                <table class="table table-striped table-bordered table-hover table-checkable order-column" id="sample_1" ng-hide="vm.beacons.content.length === 0">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th data-translate="SENSOR_LIST.SERIAL">מספר סידורי</th>
+                            <th data-translate="SENSOR_LIST.LICENSE_PLATE_NUMBER">מספר רכב</th>
+                            <th data-translate="SENSOR_LIST.LAST_ACTIVITY">תאריך הפעלה אחרון</th>
+                            <th data-translate="SENSOR_LIST.EXPIRY_DATE">תוקף סנסור</th>
+                            <th data-translate="SENSOR_LIST.ACTION">פעולה</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="odd gradeX" ng-repeat="item in vm.beacons.content track by $index" style="cursor: pointer">
+                            <td> {{ $index + 1 + 20 * vm.currentPage }}</td>
+                            <td> {{ item.serial }} </td>
+                            <td> {{ item.licensePlateNumber }} </td>
+                            <td>
+                                <span data-ng-show="item.lastActivity">{{ item.lastActivity }}</span>
+                                <span data-ng-hide="item.lastActivity" data-translate="SENSOR_LIST.NOT_ACTIVATED"></span> 
+                            </td>
+                            <td> {{ item.expiryDate }} </td>
+                            <td>
+                                <button class="btn" ng-show="item.active" ng-click="vm.toggleSuspendBeacon($index)" data-translate="SENSOR_LIST.DEACTIVATE_SENSOR">הקפאת סנסור</button>
+                                <button class="btn" ng-show="!item.active" ng-click="vm.toggleSuspendBeacon($index)" data-translate="SENSOR_LIST.ACTIVATE_SENSOR">הפעלת סנסור</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <ul class="pagination" ng-hide="vm.totalPages().length === 0">
+                    <li ng-hide="vm.beacons.totalPages === 1">
+                        <a href="" ng-click="vm.goToPage(0)" data-translate="PAGINATION.FIRST">ראשון</a>
+                    </li>
+                    <li ng-hide="vm.currentPage == 0">
+                        <a href="" ng-click="vm.goToPage(vm.currentPage - 1)">‹</a>
+                    </li>
+                    <li ng-class="{active: vm.beacons.number === $index}" ng-repeat="page in vm.totalPages() track by $index">
+                        <a href="" ng-click="vm.goToPage($index)">{{ $index + 1 }}</a>
+                    </li>
+                    <li ng-hide="vm.beacons.last">
+                        <a href="" ng-click="vm.goToPage(vm.currentPage + 1)">›</a>
+                    </li>
+                    <li ng-hide="vm.beacons.last">
+                        <a ng-click="vm.goToPage(vm.totalPages().length - 1)" data-translate="PAGINATION.LAST">אחרון</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

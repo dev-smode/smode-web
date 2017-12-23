@@ -1,0 +1,47 @@
+<div class="portlet light bordered">
+    <div class="portlet-title">
+        <div class="caption pull-left">
+            <span class="caption-subject font-dark sbold uppercase" data-translate="SENSOR_LIST.ATTACH">צימוד סנסור</span>
+        </div>
+    </div>
+    <div class="portlet-body form">
+        <form class="form-horizontal" name="newBeacon" ng-submit="vm.attachBeacon()">
+            <div class="form-body">
+                <div class="form-group">
+                    <label class="col-md-3 control-label" data-translate="SENSOR_LIST.SERIAL">מספר סידורי סנסור</label>
+                    <div class="col-md-9">
+                        <input type="text" name="serial" ng-class="{highlight: newBeacon.serial.$error.required && newBeacon.serial.$touched}" class="form-control" placeholder="מספר סידורי סנסור" data-translate data-translate-attr-placeholder="SENSOR_LIST.SERIAL" ng-model="vm.beacon.serial" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label" data-translate="SENSOR_LIST.LICENSE_PLATE_NUMBER">מספר רכב</label>
+                    <div class="col-md-9">
+                        <input type="text" name="licensePlateNumber" ng-class="{highlight: newBeacon.licensePlateNumber.$error.required && newBeacon.licensePlateNumber.$touched}" class="form-control" placeholder="מספר רכב" data-translate data-translate-attr-placeholder="SENSOR_LIST.LICENSE_PLATE_NUMBER" ng-model="vm.beacon.licensePlateNumber" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">UUID</label>
+                    <div class="col-md-9">
+                        <input type="text" name="uuid" ng-class="{highlight: newBeacon.uuid.$error.required && newBeacon.uuid.$touched}" class="form-control" placeholder="UUID" ng-model="vm.beacon.uuid" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label" data-translate="SENSOR_LIST.EXPIRY_DATE">תוקף סנסור</label>
+                    <div class="col-md-9">
+                        <p class="input-group">
+                            <input type="text" class="form-control" datetime-picker="dd/MM/yyyy" ng-model="vm.beacon.expiryDate" is-open="vm.isOpen" />
+                            <span class="input-group-btn">
+                             <button type="button" class="btn btn-default" ng-click="vm.openCalendar($event, prop)"><i class="fa fa-calendar"></i></button>
+                        </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3 pull-right">
+                        <button class="btn btn-success pull-right" type="submit" ng-disabled="newBeacon.$invalid" data-translate="SENSOR_LIST.SAVE">שמור</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

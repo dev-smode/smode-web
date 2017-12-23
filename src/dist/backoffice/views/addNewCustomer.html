@@ -1,0 +1,83 @@
+<div class="portlet light bordered">
+    <div class="portlet-title">
+        <div class="caption pull-left">
+            <span class="caption-subject font-dark sbold uppercase" data-ng-show="vm.editMode" data-translate="CUSTOMER_FORM.EDIT_CUSTOMER"></span>
+            <span class="caption-subject font-dark sbold uppercase" data-ng-hide="vm.editMode" data-translate="CUSTOMER_FORM.ADD_CUSTOMER"></span>
+        </div>
+    </div>
+    <div class="portlet-body form">
+        <form class="form-horizontal" novalidate name="newCustomer" ng-submit="vm.addNewCustomer()">
+            <div class="form-body">
+                <div class="col-sm-2">
+                    <label for="fileUpload" data-translate="CUSTOMER_FORM.LOGO">לוגו</label>
+                    <input ng-class="{highlight: newCustomer.companyLogo.$error.required && newCustomer.companyLogo.$touched}" name="companyLogo" id="fileUpload" type="file" class="form-control" ng-model="vm.customer.companyLogo" base-sixty-four-input>
+                </div>
+                <div class="col-sm-8">
+                    <div class="form-group">
+                        <label class="col-md-3 control-label" data-translate="CUSTOMER_FORM.COMPANY_NAME">שם החברה</label>
+                        <div class="col-md-9">
+                            <input ng-class="{highlight: newCustomer.companyName.$error.required && newCustomer.companyName.$touched}" name="companyName" type="text" class="form-control" placeholder="שם החברה" data-translate data-translate-attr-placeholder="CUSTOMER_FORM.COMPANY_NAME" ng-model="vm.customer.companyName" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label" data-translate="CUSTOMER_FORM.CONTACT">איש קשר</label>
+                        <div class="col-md-9">
+                            <input ng-class="{highlight: newCustomer.displayName.$error.required && newCustomer.displayName.$touched}" name="displayName" type="text" class="form-control" placeholder="איש קשר" data-translate data-translate-attr-placeholder="CUSTOMER_FORM.CONTACT" ng-model="vm.customer.displayName" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label" data-translate="CUSTOMER_FORM.EMAIL">אימייל</label>
+                        <div class="col-md-9">
+                            <input ng-class="{highlight: (newCustomer.email.$error.required || newCustomer.email.$error.pattern) && newCustomer.email.$touched}" ng-pattern="vm.emailPattern" name="email" type="email" class="form-control" placeholder="אימייל" data-translate data-translate-attr-placeholder="CUSTOMER_FORM.EMAIL" ng-model="vm.customer.email"
+                                required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label" data-translate="CUSTOMER_FORM.PHONE_NUMBER">מספר טלפון</label>
+                        <div class="col-md-9">
+                            <input name="phoneNumber" ng-class="{highlight: (newCustomer.phoneNumber.$error.required || newCustomer.phoneNumber.$error.pattern) && newCustomer.phoneNumber.$touched}" type="text" class="form-control" placeholder="מספר טלפון" data-translate data-translate-attr-placeholder="CUSTOMER_FORM.PHONE_NUMBER" ng-model="vm.customer.phoneNumber"
+                                ng-pattern="/^(05){1}[\d]{1}(-)*[2-9]{1}[\d]{6}$/" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label" data-translate="CUSTOMER_FORM.ROLE">תפקיד</label>
+                        <div class="col-md-9">
+                            <input ng-class="{highlight: newCustomer.companyRole.$error.required && newCustomer.companyRole.$touched}" name="companyRole" type="text" class="form-control" placeholder="תפקיד" data-translate data-translate-attr-placeholder="CUSTOMER_FORM.ROLE" ng-model="vm.customer.companyRole" required>
+                        </div>
+                    </div>
+                    <div ng-show="vm.showPasswordFields" class="change-password">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" data-translate="CUSTOMER_FORM.PASSWORD">סיסמא</label>
+                            <div class="col-md-9">
+                                <input name="password" ng-class="{highlight: newCustomer.password.$error.required && newCustomer.password.$touched}" type="password" class="form-control" placeholder="סיסמא" data-translate data-translate-attr-placeholder="CUSTOMER_FORM.PASSWORD" ng-model="vm.customer.password">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" data-translate="CUSTOMER_FORM.CONFIRM_PASSWORD">אישור סיסמא</label>
+                            <div class="col-md-9">
+                                <input name="confirmPassword" ng-class="{highlight: newCustomer.confirmPassword.$error.required && newCustomer.confirmPassword.$touched}" type="password" class="form-control" placeholder="{{ 'CUSTOMER_FORM.CONFIRM_PASSWORD' | translate }}" ng-model="confirmPassword" confirm-password compare-to="vm.customer.password">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-if="vm.editMode">
+                        <label class="col-md-3 control-label" data-translate="CUSTOMER_FORM.STATUS">סטטוס</label>
+                        <div class="col-md-9">
+                            <button class="btn pull-left" ng-class="{'btn-danger': vm.customer.active}" type="button" ng-show="vm.customer.active" ng-click="vm.toggleSuspendCustomer()" data-translate="CUSTOMER_FORM.DEACTIVATE_CUSTOMER">הקפא לקוח</button>
+                            <button class="btn pull-left" ng-class="{'btn-success': !vm.customer.active}" type="button" ng-show="!vm.customer.active" ng-click="vm.toggleSuspendCustomer()" data-translate="CUSTOMER_FORM.ACTIVATE_CUSTOMER">הפעל לקוח</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <div class="col-md-3 pull-right">
+                            <button class="btn btn-success pull-right" ladda="vm.loading" ng-disabled="newCustomer.$invalid" type="submit" data-translate="CUSTOMER_FORM.SAVE">שמור</button>
+                        </div>
+                        <div class="col-md-3 pull-right" ng-if="vm.editMode">
+                            <button class="btn btn-warning pull-right" type="button" ng-click="vm.togglePasswordFields()" data-translate="CUSTOMER_FORM.CHANGE_PASSWORD">שנה סיסמא</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

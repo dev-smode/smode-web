@@ -1,0 +1,43 @@
+<div class="portlet light bordered">
+    <div class="portlet-title">
+        <div class="caption pull-left">
+            <span class="caption-subject font-dark sbold uppercase" data-translate="PHONE_NUMBERS.DEFINE_PREFERRED_NUMBERS">הגדרת מספרים מועדפים</span>
+        </div>
+    </div>
+    <div class="portlet-body row">
+        <form class="no-bullets" class="form-horizontal" name="phonesForm">
+            <div class="form-body">
+                <div ng-repeat="number in vm.driversPhoneNumbers track by $index">
+                    <ng-form name="phoneNumbersForm">
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon2">{{ $index+1 }}</span>
+                                    <input name="name" type="text" placeholder="שם מלא" data-translate data-translate-attr-placeholder="PHONE_NUMBERS.FULL_NAME" class="form-control" ng-model="number.name" ng-class="{highlight: phoneNumbersForm.name.$error.required && phoneNumbersForm.name.$touched}" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input name="phoneNumber" type="text" placeholder="מספר טלפון" data-translate data-translate-attr-placeholder="PHONE_NUMBERS.PHONE_NUMBER" class="form-control" ng-model="number.number" ng-class="{highlight: (phoneNumbersForm.phoneNumber.$error.required || phoneNumbersForm.phoneNumber.$error.pattern) && phoneNumbersForm.phoneNumber.$touched}"
+                                        ng-pattern="/^(05){1}[\d]{1}(-)*[2-9]{1}[\d]{6}$/" required>
+                                    <span class="input-group-addon" id="basic-addon2" ng-click="vm.removeNumber($index)" style="cursor: pointer"><i class="fa fa-remove" style="color: red"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-form>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <button type="button" ng-disabled="phonesForm.$invalid" ng-click="vm.saveNumbers()" progress-button="someFunctionThatReturnsPromise()" class="btn btn-success pull-right">{{ 'SAVE' | translate }}</button>
+                    <button type="button" ng-disabled="phonesForm.$invalid" ng-click="vm.addNewNumber()" class="btn btn-warning pull-left" ng-disabled="phoneNumbersError"><i class="fa fa-plus"></i></button>
+                </div>
+                <div class="alert alert-danger col-xs-12" role="alert" ng-show="vm.phoneNumbersError">
+                    <strong data-translate="PHONE_NUMBERS.ERRORS.ATTENTION">שים לב!</strong> <span data-translate="PHONE_NUMBERS.ERRORS.NO_MORE_PHONE_NUMBERS">אין אפשרות להוסיף יותר מ-12 מספרים</span>.
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

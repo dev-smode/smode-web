@@ -1,0 +1,20 @@
+<div class="page-header-inner container-fluid">
+    <div class="vertical-center header-logo" data-ng-class="{'rtl': settings.direction == 'rtl', ltr: settings.direction != 'rtl'}">
+        <a ui-sref="{{ currentUser.mainStateScreen }}">
+            <img class="img img-responsive app-logo" ng-src="{{ currentUser.companyLogo.url }}" ng-if="!isAdmin" alt="logo" />
+            <img class="img img-responsive app-logo" src="https://static.wixstatic.com/media/7ea75c_3ce0a5ae41814dc3b41a174c2647de34.jpg/v1/fill/w_140,h_140,al_c,q_80,usm_0.66_1.00_0.01/7ea75c_3ce0a5ae41814dc3b41a174c2647de34.webp" ng-if="isAdmin" alt="logo" />
+        </a>
+    </div>
+    <div class="top-menu">
+        <ul class="nav navbar-nav pull-right">
+            <li><a href="#">{{ currentUser.email }}</a></li>
+            <li>
+                <a ui-sref="logout" data-translate='LOGOUT'>צא</a>
+            </li>
+            <li>
+                <select name="permissionLevel" required ng-model="currentUser.language" class="form-control language-select" ng-options="p.value as p.name for p in languages" data-ng-change="chooseLanguage()">
+                </select>
+            </li>
+        </ul>
+    </div>
+</div>
