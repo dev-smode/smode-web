@@ -41,8 +41,7 @@ gulp.task('build', function (cb) {
 });
 
 gulp.task('build-production', function (cb) {
-  runSequence('clean', 'concat', 'browserify',
-    'minify', 'copy:plugins', 'rtlcss', 'node_modules_to_dist', cb);
+  runSequence('build', 'concat-css', 'build-js-bundle-0','build-js-bundle-1',cb);
 });
 
 gulp.task('node_modules_to_dist', function () {
@@ -104,6 +103,57 @@ gulp.task('concat-css',function (){
     './node_modules/angular-bootstrap-datetimepicker/src/css/datetimepicker.css'
   ];
   gulp.src(cssFiles).pipe(concat('bundle.css')).pipe(gulp.dest('./dist'));
+});
+
+gulp.task('build-js-bundle-0',function (){
+  var files = [
+    './assets/global/plugins/jquery.min.js',
+    './assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js',
+    './assets/global/plugins/jquery.blockui.min.js',
+    './assets/global/plugins/jquery.sparkline.min.js',
+    './assets/global/plugins/bootstrap/js/bootstrap.min.js',
+    './assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js',
+    './assets/global/plugins/js.cookie.min.js',
+    './assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js',
+    './assets/global/plugins/angularjs/angular.min.js',
+    './assets/global/plugins/angularjs/angular-sanitize.min.js',
+    './assets/global/plugins/angularjs/angular-touch.min.js',
+    './assets/global/plugins/angularjs/plugins/angular-ui-router.min.js',
+    './assets/global/plugins/angularjs/plugins/ui-bootstrap-tpls.min.js',
+    './assets/global/scripts/datatable.min.js',
+    './assets/global/plugins/datatables/datatables.min.js',
+    './assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js',
+    './assets/global/plugins/morris/raphael-min.js',
+    './assets/global/plugins/morris/morris.min.js',
+  ];
+  gulp.src(files).pipe(concat('bundle-0.js')).pipe(gulp.dest('./dist'));
+});
+gulp.task('build-js-bundle-1',function (){
+  var files = [
+    './assets/global/scripts/app.min.js',
+    './assets/layouts/layout/scripts/layout.min.js',
+    './assets/layouts/global/scripts/quick-sidebar.min.js',
+    './assets/layouts/global/scripts/quick-nav.min.js',
+    './assets/layouts/layout/scripts/demo.min.js',
+    './assets/pages/scripts/table-datatables-managed.min.js',
+    './node_modules/angular-jwt/dist/angular-jwt.min.js',
+    './node_modules/angular-base64-upload/dist/angular-base64-upload.min.js',
+    './node_modules/moment/min/moment-with-locales.min.js',
+    './node_modules/angular-modal-service/dst/angular-modal-service.min.js',
+    './node_modules/angular-moment/angular-moment.min.js',
+    './assets/pages/scripts/dashboard.min.js',
+    './node_modules/ladda/dist/spin.min.js',
+    './node_modules/ladda/dist/ladda.min.js',
+    './node_modules/angular-ladda/dist/angular-ladda.min.js',
+    './node_modules/sweetalert2/dist/sweetalert2.min.js',
+    './node_modules/swangular/swangular.js',
+    './node_modules/angular-progress-button-styles/dist/angular-progress-button-styles.min.js',
+    './node_modules/angular-translate/dist/angular-translate.js',
+    './node_modules/angular-translate/dist/angular-translate-loader-static-files/angular-translate-loader-static-files.js',
+    './node_modules/angular-recaptcha/release/angular-recaptcha.min.js',
+    './assets/global/scripts/datepicker.js'
+  ];
+  gulp.src(files).pipe(concat('bundle-1.js')).pipe(gulp.dest('./dist'));
 });
 
 gulp.task('watch', function () {
