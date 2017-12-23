@@ -126,7 +126,7 @@ gulp.task('build-js-bundle-0',function (){
     './assets/global/plugins/morris/raphael-min.js',
     './assets/global/plugins/morris/morris.min.js',
   ];
-  gulp.src(files).pipe(concat('bundle-0.js')).pipe(gulp.dest('./dist'));
+  gulp.src(files).pipe(concat('bundle-0.js')).pipe(uglify()).pipe(gulp.dest('./dist'));
 });
 gulp.task('build-js-bundle-1',function (){
   var files = [
@@ -153,7 +153,7 @@ gulp.task('build-js-bundle-1',function (){
     './node_modules/angular-recaptcha/release/angular-recaptcha.min.js',
     './assets/global/scripts/datepicker.js'
   ];
-  gulp.src(files).pipe(concat('bundle-1.js')).pipe(gulp.dest('./dist'));
+  gulp.src(files).pipe(concat('bundle-1.js')).pipe(uglify()).pipe(gulp.dest('./dist'));
 });
 
 gulp.task('watch', function () {
