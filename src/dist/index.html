@@ -10,15 +10,16 @@
         <base href="/">
 
         <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+        <!-- dev css
         <link href="/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-        <link rel="stylesheet" type="text/css" href="/node_modules/angular-progress-button-styles/dist/angular-progress-button-styles.min.css">
+        <link href="/node_modules/angular-progress-button-styles/dist/angular-progress-button-styles.min.css" rel="stylesheet" type="text/css" >
         <link href="/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
         <link href="/assets/global/plugins/bootstrap/css/bootstrap-rtl.min.css" rel="stylesheet" type="text/css" data-ng-if="settings.direction == 'rtl'" />
         <link href="/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" data-ng-if="settings.direction != 'rtl'" />
         <link href="/assets/global/plugins/bootstrap-switch/css/bootstrap-switch-rtl.min.css" rel="stylesheet" type="text/css" data-ng-if="settings.direction == 'rtl'" />
         <link href="/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" data-ng-if="settings.direction != 'rtl'" />
         <link href="/assets/global/plugins/morris/morris.css" rel="stylesheet">
-        <link href="/assets/global/css/app.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/global/css/app.css" rel="stylesheet" type="text/css">
         <link href="/assets/global/css/components-rtl.min.css" id="style_components" rel="stylesheet" type="text/css" data-ng-if="settings.direction == 'rtl'" />
         <link href="/assets/global/css/components.min.css" id="style_components" rel="stylesheet" type="text/css" data-ng-if="settings.direction != 'rtl'" />
         <link href="/assets/global/css/plugins-rtl.min.css" rel="stylesheet" type="text/css" data-ng-if="settings.direction == 'rtl'" />
@@ -30,12 +31,16 @@
         <link href="/assets/layouts/layout/css/custom-rtl.min.css" rel="stylesheet" type="text/css" data-ng-if="settings.direction == 'rtl'" />
         <link href="/assets/layouts/layout/css/custom.min.css" rel="stylesheet" type="text/css" data-ng-if="settings.direction != 'rtl'" />
         <link href="/assets/pages/css/login-3.min.css" rel="stylesheet" type="text/css" />
-        <!--<link href="/assets/global/css/components-rounded.min.css" rel="stylesheet" id="style_components" type="text/css" />-->
         <link href="/assets/global/plugins/select2/css/select2-bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="/assets/global/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
-        <link rel="stylesheet" href="/node_modules/ladda/dist/ladda-themeless.min.css">
-        <link rel="stylesheet" href="/node_modules/sweetalert2/dist/sweetalert2.min.css">
-        <link rel="stylesheet" href="/node_modules/angular-bootstrap-datetimepicker/src/css/datetimepicker.css" />
+        <link href="/node_modules/ladda/dist/ladda-themeless.min.css" rel="stylesheet">
+        <link href="/node_modules/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet">
+        <link href="/node_modules/angular-bootstrap-datetimepicker/src/css/datetimepicker.css" rel="stylesheet"/>
+        <!-- dev css -->
+
+        <!-- prod css -->
+        <link href="/assets/bundle.css" rel="stylesheet"/>
+        <!-- prod css -->
         <script src='https://www.google.com/recaptcha/api.js'></script>
     </head>
         <body data-ng-controller="AppController" class="page-header-fixed page-sidebar-closed-hide-logo page-on-load" data-ng-class="{'page-content-white': settings.layout.pageContentWhite,'page-container-bg-solid': settings.layout.pageBodySolid, 'page-sidebar-closed': settings.layout.pageSidebarClosed, 'rtl': settings.direction == 'rtl', ltr: settings.direction != 'rtl'}">
@@ -66,8 +71,8 @@
             <script src="/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js"></script>
             <script src="/assets/global/plugins/morris/raphael-min.js" type="text/javascript"></script>
             <script src="/assets/global/plugins/morris/morris.min.js" type="text/javascript"></script>
-            <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
 
+            <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
             <script src="/bundle.js" type="text/javascript"></script>
 
             <script src="/assets/global/scripts/app.min.js" type="text/javascript"></script>

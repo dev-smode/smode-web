@@ -75,6 +75,37 @@ gulp.task('node_modules_to_dist', function () {
 
 });
 
+gulp.task('concat-css',function (){
+  var cssFiles = [
+    './assets/global/plugins/font-awesome/css/font-awesome.min.css',
+    './node_modules/angular-progress-button-styles/dist/angular-progress-button-styles.min.css',
+    './assets/global/plugins/simple-line-icons/simple-line-icons.min.css',
+    './assets/global/plugins/bootstrap/css/bootstrap-rtl.min.css',
+    './assets/global/plugins/bootstrap/css/bootstrap.min.css',
+    './assets/global/plugins/bootstrap-switch/css/bootstrap-switch-rtl.min.css',
+    './assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css',
+    './assets/global/plugins/morris/morris.css',
+    './assets/global/css/app.css',
+    './assets/global/css/components-rtl.min.css',
+    './assets/global/css/components.min.css',
+    './assets/global/css/plugins-rtl.min.css',
+    './assets/global/css/plugins.min.css',
+    './assets/layouts/layout/css/layout-rtl.min.css',
+    './assets/layouts/layout/css/layout.min.css',
+    './assets/layouts/layout/css/themes/light2-rtl.min.css',
+    './assets/layouts/layout/css/themes/light2.min.css',
+    './assets/layouts/layout/css/custom-rtl.min.css',
+    './assets/layouts/layout/css/custom.min.css',
+    './assets/pages/css/login-3.min.css',
+    './assets/global/plugins/select2/css/select2-bootstrap.min.css',
+    './assets/global/plugins/select2/css/select2.min.css',
+    './node_modules/ladda/dist/ladda-themeless.min.css',
+    './node_modules/sweetalert2/dist/sweetalert2.min.css',
+    './node_modules/angular-bootstrap-datetimepicker/src/css/datetimepicker.css'
+  ];
+  gulp.src(cssFiles).pipe(concat('bundle.css')).pipe(gulp.dest('./dist'));
+});
+
 gulp.task('watch', function () {
   gulp.watch(['./backoffice/**/*'], ['build']);
 });
