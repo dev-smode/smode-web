@@ -11,7 +11,7 @@ Metronic AngularJS App Main Script
 var MetronicApp = angular.module('MetronicApp', ['ui.router', 'ui.bootstrap', 'ngSanitize', 'angular-jwt', 'naif.base64', 'angularModalService', 'angular-ladda', 'angular-progress-button-styles', 'swangular', 'ui.bootstrap.datetimepicker', 'ngAnimate', 'pascalprecht.translate', 'vcRecaptcha']);
 
 MetronicApp.constant('CONFIG', {
-    'SERVER': 'http://52.35.199.200:8080',
+    'SERVER': 'http://52.35.199.200:80',
     'DRIVER_PERMISSIONS': [{
         type: 'LEVEL_A',
         value: 0,
