@@ -7,9 +7,36 @@
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <!--<base href="/manager/">-->
         <base href="/">
-        <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+        <link href="//http://192.168.0.104:8000/fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+        <!-- dev css -->
+        <link href="/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="/node_modules/angular-progress-button-styles/dist/angular-progress-button-styles.min.css" rel="stylesheet" type="text/css" >
+        <link href="/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/global/plugins/bootstrap/css/bootstrap-rtl.min.css" rel="stylesheet" type="text/css" data-ng-if="settings.direction == 'rtl'" />
+        <link href="/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" data-ng-if="settings.direction != 'rtl'" />
+        <link href="/assets/global/plugins/bootstrap-switch/css/bootstrap-switch-rtl.min.css" rel="stylesheet" type="text/css" data-ng-if="settings.direction == 'rtl'" />
+        <link href="/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" data-ng-if="settings.direction != 'rtl'" />
+        <link href="/assets/global/plugins/morris/morris.css" rel="stylesheet">
+        <link href="/assets/global/css/app.css" rel="stylesheet" type="text/css">
+        <link href="/assets/global/css/components-rtl.min.css" id="style_components" rel="stylesheet" type="text/css" data-ng-if="settings.direction == 'rtl'" />
+        <link href="/assets/global/css/components.min.css" id="style_components" rel="stylesheet" type="text/css" data-ng-if="settings.direction != 'rtl'" />
+        <link href="/assets/global/css/plugins-rtl.min.css" rel="stylesheet" type="text/css" data-ng-if="settings.direction == 'rtl'" />
+        <link href="/assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" data-ng-if="settings.direction != 'rtl'" />
+        <link href="/assets/layouts/layout/css/layout-rtl.min.css" rel="stylesheet" type="text/css" data-ng-if="settings.direction == 'rtl'" />
+        <link href="/assets/layouts/layout/css/layout.min.css" rel="stylesheet" type="text/css" data-ng-if="settings.direction != 'rtl'" />
+        <link href="/assets/layouts/layout/css/themes/light2-rtl.min.css" rel="stylesheet" type="text/css" id="style_color" data-ng-if="settings.direction == 'rtl'" />
+        <link href="/assets/layouts/layout/css/themes/light2.min.css" rel="stylesheet" type="text/css" id="style_color" data-ng-if="settings.direction != 'rtl'" />
+        <link href="/assets/layouts/layout/css/custom-rtl.min.css" rel="stylesheet" type="text/css" data-ng-if="settings.direction == 'rtl'" />
+        <link href="/assets/layouts/layout/css/custom.min.css" rel="stylesheet" type="text/css" data-ng-if="settings.direction != 'rtl'" />
+        <link href="/assets/pages/css/login-3.min.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/global/plugins/select2/css/select2-bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/global/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="/node_modules/ladda/dist/ladda-themeless.min.css" rel="stylesheet">
+        <link href="/node_modules/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet">
+        <link href="/node_modules/angular-bootstrap-datetimepicker/src/css/datetimepicker.css" rel="stylesheet"/>
+        <!-- dev css -->
         <!-- prod css -->
-        <link href="/assets/bundle.css" rel="stylesheet"/>
+        <!--<link href="/assets/bundle.css" rel="stylesheet"/>-->
         <!-- prod css -->
         <script src='https://www.google.com/recaptcha/api.js'></script>
     </head>

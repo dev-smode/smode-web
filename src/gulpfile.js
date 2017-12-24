@@ -16,6 +16,57 @@ var runSequence = require('run-sequence');
 var clean = require('gulp-clean');
 var lint = require('gulp-eslint');
 
+var cssFiles = [
+  './assets/global/plugins/font-awesome/css/font-awesome.min.css',
+  './node_modules/angular-progress-button-styles/dist/angular-progress-button-styles.min.css',
+  './assets/global/plugins/simple-line-icons/simple-line-icons.min.css',
+  './assets/global/plugins/bootstrap/css/bootstrap-rtl.min.css',
+  './assets/global/plugins/bootstrap/css/bootstrap.min.css',
+  './assets/global/plugins/bootstrap-switch/css/bootstrap-switch-rtl.min.css',
+  './assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css',
+  './assets/global/plugins/morris/morris.css',
+  './assets/global/css/app.css',
+  './assets/global/css/components-rtl.min.css',
+  './assets/global/css/components.min.css',
+  './assets/global/css/plugins-rtl.min.css',
+  './assets/global/css/plugins.min.css',
+  './assets/layouts/layout/css/layout-rtl.min.css',
+  './assets/layouts/layout/css/layout.min.css',
+  './assets/layouts/layout/css/themes/light2-rtl.min.css',
+  './assets/layouts/layout/css/themes/light2.min.css',
+  './assets/layouts/layout/css/custom-rtl.min.css',
+  './assets/layouts/layout/css/custom.min.css',
+  './assets/pages/css/login-3.min.css',
+  './assets/global/plugins/select2/css/select2-bootstrap.min.css',
+  './assets/global/plugins/select2/css/select2.min.css',
+  './node_modules/ladda/dist/ladda-themeless.min.css',
+  './node_modules/sweetalert2/dist/sweetalert2.min.css',
+  './node_modules/angular-bootstrap-datetimepicker/src/css/datetimepicker.css'
+];
+var node_modules = [
+  './node_modules/angular-progress-button-styles/dist/angular-progress-button-styles.min.css',
+  './node_modules/ladda/dist/ladda-themeless.min.css',
+  './node_modules/sweetalert2/dist/sweetalert2.min.css',
+  './node_modules/angular-bootstrap-datetimepicker/src/css/datetimepicker.css',
+  './node_modules/angular-bootstrap-datetimepicker/src/css/datetimepicker.css',
+  './node_modules/angular-jwt/dist/angular-jwt.min.js',
+  './node_modules/angular-base64-upload/dist/angular-base64-upload.min.js',
+  './node_modules/moment/min/moment-with-locales.min.js',
+  './node_modules/angular-modal-service/dst/angular-modal-service.min.js',
+  './node_modules/angular-moment/angular-moment.min.js',
+  './node_modules/ladda/dist/spin.min.js',
+  './node_modules/ladda/dist/ladda.min.js',
+  './node_modules/angular-ladda/dist/angular-ladda.min.js',
+  './node_modules/sweetalert2/dist/sweetalert2.min.js',
+  './node_modules/swangular/swangular.js',
+  './node_modules/angular-progress-button-styles/dist/angular-progress-button-styles.min.js',
+  './node_modules/angular-progress-button-styles/dist/angular-progress-button-styles.min.js',
+  './node_modules/angular-translate/dist/angular-translate-loader-static-files/angular-translate-loader-static-files.js',
+  './node_modules/angular-recaptcha/release/angular-recaptcha.min.js',
+  './node_modules/angular-recaptcha/release/angular-recaptcha.min.js',
+  './node_modules/angular-translate/dist/angular-translate.js',
+  './node_modules/angular-translate/dist/angular-translate.js',
+];
 gulp.task('clean', function () {
   return gulp.src('.tmp/', {read: false})
     .pipe(clean());
@@ -45,64 +96,16 @@ gulp.task('build-production', function (cb) {
 });
 
 gulp.task('node_modules_to_dist', function () {
-  var node_modules = [
-    './node_modules/angular-progress-button-styles/dist/angular-progress-button-styles.min.css',
-    './node_modules/ladda/dist/ladda-themeless.min.css',
-    './node_modules/sweetalert2/dist/sweetalert2.min.css',
-    './node_modules/angular-bootstrap-datetimepicker/src/css/datetimepicker.css',
-    './node_modules/angular-bootstrap-datetimepicker/src/css/datetimepicker.css',
-    './node_modules/angular-jwt/dist/angular-jwt.min.js',
-    './node_modules/angular-base64-upload/dist/angular-base64-upload.min.js',
-    './node_modules/moment/min/moment-with-locales.min.js',
-    './node_modules/angular-modal-service/dst/angular-modal-service.min.js',
-    './node_modules/angular-moment/angular-moment.min.js',
-    './node_modules/ladda/dist/spin.min.js',
-    './node_modules/ladda/dist/ladda.min.js',
-    './node_modules/angular-ladda/dist/angular-ladda.min.js',
-    './node_modules/sweetalert2/dist/sweetalert2.min.js',
-    './node_modules/swangular/swangular.js',
-    './node_modules/angular-progress-button-styles/dist/angular-progress-button-styles.min.js',
-    './node_modules/angular-progress-button-styles/dist/angular-progress-button-styles.min.js',
-    './node_modules/angular-translate/dist/angular-translate-loader-static-files/angular-translate-loader-static-files.js',
-    './node_modules/angular-recaptcha/release/angular-recaptcha.min.js',
-    './node_modules/angular-recaptcha/release/angular-recaptcha.min.js',
-    './node_modules/angular-translate/dist/angular-translate.js',
-    './node_modules/angular-translate/dist/angular-translate.js',
-  ];
   gulp.src(node_modules, {base: './'})
     .pipe(gulp.dest('./dist'));
-
 });
 
 gulp.task('concat-css',function (){
-  var cssFiles = [
-    './assets/global/plugins/font-awesome/css/font-awesome.min.css',
-    './node_modules/angular-progress-button-styles/dist/angular-progress-button-styles.min.css',
-    './assets/global/plugins/simple-line-icons/simple-line-icons.min.css',
-    './assets/global/plugins/bootstrap/css/bootstrap-rtl.min.css',
-    './assets/global/plugins/bootstrap/css/bootstrap.min.css',
-    './assets/global/plugins/bootstrap-switch/css/bootstrap-switch-rtl.min.css',
-    './assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css',
-    './assets/global/plugins/morris/morris.css',
-    './assets/global/css/app.css',
-    './assets/global/css/components-rtl.min.css',
-    './assets/global/css/components.min.css',
-    './assets/global/css/plugins-rtl.min.css',
-    './assets/global/css/plugins.min.css',
-    './assets/layouts/layout/css/layout-rtl.min.css',
-    './assets/layouts/layout/css/layout.min.css',
-    './assets/layouts/layout/css/themes/light2-rtl.min.css',
-    './assets/layouts/layout/css/themes/light2.min.css',
-    './assets/layouts/layout/css/custom-rtl.min.css',
-    './assets/layouts/layout/css/custom.min.css',
-    './assets/pages/css/login-3.min.css',
-    './assets/global/plugins/select2/css/select2-bootstrap.min.css',
-    './assets/global/plugins/select2/css/select2.min.css',
-    './node_modules/ladda/dist/ladda-themeless.min.css',
-    './node_modules/sweetalert2/dist/sweetalert2.min.css',
-    './node_modules/angular-bootstrap-datetimepicker/src/css/datetimepicker.css'
-  ];
-  gulp.src(cssFiles).pipe(concat('bundle.css')).pipe(gulp.dest('./dist'));
+  gulp.src(['./assets/global/plugins/font-awesome/css/font-awesome.min.css',]).pipe(concat('bundle.css')).pipe(gulp.dest('./dist/assets'));
+});
+
+gulp.task('assets_css_to_dist',function (){
+  gulp.src(cssFiles,{base: './'}).pipe(gulp.dest('./dist'));
 });
 
 gulp.task('build-js-bundle-0',function (){
