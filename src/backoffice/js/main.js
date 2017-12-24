@@ -21,7 +21,7 @@ const MetronicApp = angular.module('MetronicApp', [
 ]);
 
 MetronicApp.constant('CONFIG', {
-    'SERVER': 'https://api.irehapp.com',
+    'SERVER': 'http://52.35.199.200:8080',
     'DRIVER_PERMISSIONS': [
         {
             type: 'LEVEL_A',
@@ -170,7 +170,7 @@ MetronicApp.factory('settings', ['$rootScope', ($rootScope) => {
     };
 
     $rootScope.settings = settings;
-    
+
     return settings;
 }]);
 
@@ -178,7 +178,7 @@ MetronicApp.factory('settings', ['$rootScope', ($rootScope) => {
 MetronicApp.controller('AppController', ['$scope', '$rootScope', ($scope) => {
     $scope.$on('$viewContentLoaded', () => {
         //App.initComponents(); // init core components
-        //Layout.init(); //  Init entire layout(header, footer, sidebar, etc) on page load if the partials included in server side instead of loading with ng-include directive 
+        //Layout.init(); //  Init entire layout(header, footer, sidebar, etc) on page load if the partials included in server side instead of loading with ng-include directive
     });
 }]);
 
@@ -487,7 +487,9 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', ($stateProvider, $ur
 }]);
 
 /* Init global settings and run the app */
-MetronicApp.run(['$rootScope', 'settings', '$state', 'authManager', 'userDataService', 'authService', ($rootScope, settings, $state, authManager, userDataService) => {
+MetronicApp.run(['$rootScope', 'settings', '$state', 'authManager',
+  '$http',
+  ($rootScope, settings, $state, authManager) => {
     $rootScope.$state = $state; // state to be accessed from view
     $rootScope.$settings = settings; // state to be accessed from view
 
@@ -497,3 +499,4 @@ MetronicApp.run(['$rootScope', 'settings', '$state', 'authManager', 'userDataSer
 
     $rootScope.$on('tokenHasExpired', () => $state.go('logout'));
 }]);
+
