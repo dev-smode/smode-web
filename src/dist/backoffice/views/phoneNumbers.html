@@ -21,7 +21,7 @@
                             <div class="form-group">
                                 <div class="input-group">
                                     <input name="phoneNumber" type="text" placeholder="מספר טלפון" data-translate data-translate-attr-placeholder="PHONE_NUMBERS.PHONE_NUMBER" class="form-control" ng-model="number.number" ng-class="{highlight: (phoneNumbersForm.phoneNumber.$error.required || phoneNumbersForm.phoneNumber.$error.pattern) && phoneNumbersForm.phoneNumber.$touched}"
-                                        ng-pattern="/^(05){1}[\d]{1}(-)*[2-9]{1}[\d]{6}$/" required>
+                                        ng-pattern="/^[+]?[0-9]{12}$/" required>
                                     <span class="input-group-addon" id="basic-addon2" ng-click="vm.removeNumber($index)" style="cursor: pointer"><i class="fa fa-remove" style="color: red"></i></span>
                                 </div>
                             </div>
