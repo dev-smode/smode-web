@@ -22,7 +22,7 @@ const MetronicApp = angular.module('MetronicApp', [
 
 MetronicApp.constant('CONFIG', {
     // 'SERVER': 'http://192.168.0.26:8080',//DEV
-    'SERVER': 'http://52.35.199.200:80',//PROD
+    'SERVER': 'http://52.35.199.200/api',//PROD
     'DRIVER_PERMISSIONS': [
         {
             type: 'LEVEL_A',
