@@ -12,7 +12,7 @@ var MetronicApp = angular.module('MetronicApp', ['ui.router', 'ui.bootstrap', 'n
 
 MetronicApp.constant('CONFIG', {
     // 'SERVER': 'http://192.168.0.26:8080',//DEV
-    'SERVER': 'https://lb-production-api-1320386898.us-west-2.elb.amazonaws.com:443/api', //PROD
+    'SERVER': 'https://api.irehapp.com/api/', //PROD
     'DRIVER_PERMISSIONS': [{
         type: 'LEVEL_A',
         value: 0,
